@@ -35,11 +35,7 @@ function CenteredGrid(props) {
         </Grid>
         <Grid item xs={3} />
 
-        <Grid item xs={3} />
-        <Grid item xs={6}>
-          griglia da aggiornamre
-        </Grid>
-        <Grid item xs={3} />
+      
       </Grid>
     </div>
   );
