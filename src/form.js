@@ -72,7 +72,7 @@ class Form extends Component {
       }
     }
   };
-  /**aggiustareeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
+  /**Modifies recipe inside dialog */
   modifyRecipe = index => {
     const copy = this.state.recipes;
     const errors = [];

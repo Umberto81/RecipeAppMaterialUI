@@ -18,6 +18,10 @@ const FormInput = (props) =>{
                 margin="normal"
                 name="title"
                 margin="dense"
+                fullWidth='true'
+                variant='outlined'
+
+
             />
             <br />
             <TextField
@@ -31,6 +35,8 @@ const FormInput = (props) =>{
                 margin="normal"
                 multiline
                 rows={4}
+                fullWidth='true'
+                variant='outlined'
             />
             <br />
             <Button
