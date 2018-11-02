@@ -69,6 +69,8 @@ export default class FormDialog extends React.Component {
                             label="ingredients"
                             type="text"
                             fullWidth
+                                multiline
+                                rows={4}
                                 defaultValue={ingredientsToModify}
                                 onChange={this.props.handlerChange}
                                 name='modifiedIngredient'
