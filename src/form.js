@@ -103,11 +103,11 @@ class Form extends Component {
     };
 
     if (dati.title.length < 4) {
-      errors.push("title too short");
+      errors.push("The title must be at least 4 characters long");
       this.setState({ errorTitle: true });
     }
     if (dati.ingredients.length < 4) {
-      errors.push("too short");
+      errors.push("The ingredients must be at least 4 characters long");
       this.setState({ errorIngredients: true });
     }
 
