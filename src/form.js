@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import Info from "./info";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
+import FormInput from "./formInput";
 
 const styles = theme => ({
   buttonPadding: {
-    padding: '20px',
-    fontSize: '12px',
-  },
+    padding: "20px",
+    fontSize: "12px"
+  }
 });
-
 
 class Form extends Component {
   state = {
@@ -23,7 +23,7 @@ class Form extends Component {
     errorIngredients: false,
     recipeToModify: {},
     modifiedTitle: "",
-    modifiedIngredient: ""
+    modifiedIngredient: "",
   };
 
   handlerChange = e => {
@@ -32,7 +32,6 @@ class Form extends Component {
       [e.target.name]: e.target.value
     });
   };
-
 
   /*check if an object is empty */
   isEmpty = obj => {
@@ -132,42 +131,15 @@ class Form extends Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            required={true}
-            error={this.state.errorTitle}
-            label="Title"
-            value={this.state.title}
-            onChange={this.handlerChange}
-            margin="normal"
-            name="title"
-            margin="dense"
-            
-          />
-          <br />
-          <TextField
-            required={true}
-            error={this.state.errorIngredients}
-            label="Ingredients"
-            value={this.state.ingredients}
-            onChange={this.handlerChange}
-            margin="normal"
-            name="ingredients"
-            margin="normal"
-            multiline
-            rows={4}
-          />
-          <br />
-          <Button type="submit" variant="outlined" color="primary"
-            className={classes.buttonPadding}
-
-          >
-            Submit Recipe
-          </Button>
-        </form>
+         <FormInput
+          handleSubmit={this.handleSubmit}
+          stateData={{ ...this.state }}
+          handlerChange={this.handlerChange}
+        />
+      
+        
         <br />
         <Info
           dati={this.state.recipe}

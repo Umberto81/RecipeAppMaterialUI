@@ -6,10 +6,8 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-
-
+import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
 
 export default class FormDialog extends React.Component {
   state = {
@@ -39,7 +37,7 @@ export default class FormDialog extends React.Component {
     } = this.props.recipeToModify;
     return (
       <div>
-        <IconButton  aria-label="Edit" onClick={this.handleClickOpen}>
+        <IconButton aria-label="Edit" onClick={this.handleClickOpen}>
           <Icon>edit</Icon>
         </IconButton>
         <Dialog

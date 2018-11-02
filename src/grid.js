@@ -1,4 +1,4 @@
-import React from "react";
+import React,  {Component} from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -11,26 +11,34 @@ const styles = theme => ({
   }
 });
 
-function CenteredGrid(props) {
-  const { classes } = props;
+class CenteredGrid extends Component {
+  
+
+  render(){
+    const { classes } = this.props;
 
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={4} />
         <Grid item xs={4}>
-          <SimpleAppBar />
+          <SimpleAppBar 
+          show={this.show}
+          />
         </Grid>
         <Grid item xs={4} />
 
         <Grid item xs={4} />
         <Grid item xs={4}>
-          <Form theme={props.theme} />
+         <Form theme={this.props.theme} /> 
+          
         </Grid>
         <Grid item xs={4} />
       </Grid>
     </div>
   );
+  }
+  
 }
 
 CenteredGrid.propTypes = {
