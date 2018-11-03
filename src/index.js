@@ -3,12 +3,11 @@ import ReactDOM from "react-dom";
 import CenteredGrid from "./grid";
 import "./styles.css";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { orange, red } from "@material-ui/core/colors";
+import { orange } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
     primary: orange,
-    secondary: red
   },
   typography: {
     fontSize: 12,

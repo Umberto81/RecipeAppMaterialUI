@@ -37,7 +37,7 @@ export default class FormDialog extends React.Component {
     } = this.props.recipeToModify;
     return (
       <div>
-        <IconButton aria-label="Edit" onClick={this.handleClickOpen}>
+        <IconButton aria-label="Edit" size="medium" onClick={this.handleClickOpen}>
           <Icon>edit</Icon>
         </IconButton>
         <Dialog

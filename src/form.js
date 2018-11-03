@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import Info from "./info";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
 import FormInput from "./formInput";
 
-const styles = theme => ({
-  buttonPadding: {
-    padding: "20px",
-    fontSize: "12px"
-  }
-});
 
 class Form extends Component {
   state = {
@@ -23,7 +14,7 @@ class Form extends Component {
     errorIngredients: false,
     recipeToModify: {},
     modifiedTitle: "",
-    modifiedIngredient: "",
+    modifiedIngredient: ""
   };
 
   handlerChange = e => {
@@ -110,6 +101,14 @@ class Form extends Component {
       this.setState({ errorIngredients: true });
     }
 
+    for(let i in copy){
+      if(dati.title == copy[i].title){
+        errors.push("This title already exists");
+        this.setState({ errorTitle: true });
+
+      }
+    }
+
     if (this.isEmpty(errors)) {
       copy.push(dati);
       this.setState({
@@ -130,16 +129,14 @@ class Form extends Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
-         <FormInput
+        <FormInput
           handleSubmit={this.handleSubmit}
           stateData={{ ...this.state }}
           handlerChange={this.handlerChange}
         />
-      
-        
+
         <br />
         <Info
           dati={this.state.recipe}
@@ -158,4 +155,4 @@ class Form extends Component {
     );
   }
 }
-export default withStyles(styles)(Form);
+export default Form;

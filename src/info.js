@@ -33,17 +33,15 @@ const Info = props => {
 
   const finalRecipeList = recipeList.map((item, index) => {
     return (
-      <ExpansionPanel align="center" key={index}>
+      <ExpansionPanel key={index}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography align="center">Title: {item.title}</Typography>
+          <Typography>Title: {item.title}</Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails align="center">
+        <ExpansionPanelDetails>
           <Typography>{item.ingredients} </Typography>
         </ExpansionPanelDetails>
-        <IconButton
-          aria-label="Delete"
-          onClick={() => props.handleDelete(index)}
-        >
+        <IconButton 
+          onClick={() => props.handleDelete(index)}>
           <DeleteIcon />
         </IconButton>
 
