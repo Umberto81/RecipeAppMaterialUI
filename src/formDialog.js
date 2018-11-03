@@ -16,11 +16,15 @@ export default class FormDialog extends React.Component {
 
   handleClickOpen = () => {
     this.setState({ open: true });
-    /*
-        *this function gives the recipe index to this modal
-         */
-    this.props.handleModify(this.props.index);
   };
+
+  componentDidMount = () =>{
+    /*
+    *this function gives the recipe index to this modal
+     */
+    this.props.handleModify(this.props.index);
+
+  }
 
   handleClose = () => {
     this.setState({ open: false });
